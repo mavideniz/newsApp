@@ -22,8 +22,20 @@ struct HomeView: View {
                 VStack{
                     
                     SearchBar(text: $searchTerm)
-
-                    List(viewModel.articles , id:\.url) { item in
+                        
+//                    List{
+//
+//                        ForEach(viewModel.articles.filter({
+//                            "\($0)".contains(searchTerm)
+//                        }) , id:\.url) { item in
+//                                ArticleView(article: item)
+//                        }
+//
+//
+//                    }
+                    List(viewModel.articles.filter({
+                        "\($0)".contains(searchTerm) || searchTerm.isEmpty
+                    }) , id:\.url) { item in
                             ArticleView(article: item)
                     }
                 }.tabItem {
@@ -40,11 +52,12 @@ struct HomeView: View {
         }
         
                 
-    }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
+}
 }
