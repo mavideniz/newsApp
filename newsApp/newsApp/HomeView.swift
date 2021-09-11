@@ -20,19 +20,7 @@ struct HomeView: View {
         NavigationView {
             TabView {
                 VStack{
-                    
                     SearchBar(text: $searchTerm)
-                        
-//                    List{
-//
-//                        ForEach(viewModel.articles.filter({
-//                            "\($0)".contains(searchTerm)
-//                        }) , id:\.url) { item in
-//                                ArticleView(article: item)
-//                        }
-//
-//
-//                    }
                     List(viewModel.articles.filter({
                         "\($0)".contains(searchTerm) || searchTerm.isEmpty
                     }) , id:\.url) { item in
@@ -41,10 +29,16 @@ struct HomeView: View {
                 }.tabItem {
                     Label("Menu", systemImage: "list.dash")
                     }
-                //Favorited need add
+                //Favorites need add
                 Text("fav")
                     .tabItem {
                         Label("Favorites", systemImage: "star")
+                    }
+                
+                // MARK: ORNEK / BURASI SILINECEK
+                DetailView(article: Article.dummyData)
+                    .tabItem {
+                        Label("DetailsDemo", systemImage: "hourglass")
                     }
                 
             }.onAppear(perform: viewModel.getArticles)
