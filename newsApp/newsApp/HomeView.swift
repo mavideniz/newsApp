@@ -9,14 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     
+   
+
     @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     @State private var searchTerm: String = ""
     
     var body: some View {
-        
-        
-        
         NavigationView {
             TabView {
                 VStack{
@@ -25,8 +24,11 @@ struct HomeView: View {
                         "\($0)".contains(searchTerm) || searchTerm.isEmpty
                     }) , id:\.url) { item in
                             ArticleView(article: item)
+                        NavigationLink("" ,destination: DetailView(article: item))
                     }
-                }.tabItem {
+                    }
+                
+                .tabItem {
                     Label("Menu", systemImage: "list.dash")
                     }
                 //Favorites need add
@@ -35,20 +37,18 @@ struct HomeView: View {
                         Label("Favorites", systemImage: "star")
                     }
                 
-                // MARK: ORNEK / BURASI SILINECEK
-                DetailView(article: Article.dummyData)
-                    .tabItem {
-                        Label("DetailsDemo", systemImage: "hourglass")
-                    }
-                
+//                // MARK: DEMO DETAİLS
+//                DetailView(article: Article.dummyData)
+//                    .tabItem {
+//                        Label("DetailsDemo", systemImage: "hourglass")
+//                    }
             }.onAppear(perform: viewModel.getArticles)
-            .navigationTitle(Text("Appcent News App 🗞"))
+            .navigationTitle(Text("Appcent News App"))            
         }
-        
-                
-    
 }
 
+    
+    
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()

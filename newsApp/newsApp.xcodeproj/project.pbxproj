@@ -23,6 +23,7 @@
 		667AAC0C26EB865E007B09CA /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AAC0B26EB865E007B09CA /* ErrorView.swift */; };
 		667AAC0F26EB9686007B09CA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AAC0E26EB9686007B09CA /* SearchBar.swift */; };
 		66870D7326ECCA4E001FA333 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66870D7226ECCA4E001FA333 /* DetailView.swift */; };
+		66ADB17826EE0A9B0098C5D3 /* WebTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ADB17726EE0A9B0098C5D3 /* WebTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		667AAC0B26EB865E007B09CA /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		667AAC0E26EB9686007B09CA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		66870D7226ECCA4E001FA333 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		66ADB17726EE0A9B0098C5D3 /* WebTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				667AAC0926EB8095007B09CA /* ArticleView.swift */,
 				667AAC0B26EB865E007B09CA /* ErrorView.swift */,
 				66870D7226ECCA4E001FA333 /* DetailView.swift */,
+				66ADB17726EE0A9B0098C5D3 /* WebTab.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			files = (
 				667AAC0026EB7943007B09CA /* ResultState.swift in Sources */,
 				66870D7326ECCA4E001FA333 /* DetailView.swift in Sources */,
+				66ADB17826EE0A9B0098C5D3 /* WebTab.swift in Sources */,
 				667AABF126EB72B3007B09CA /* HomeView.swift in Sources */,
 				667AABE126EB7282007B09CA /* newsAppApp.swift in Sources */,
 				667AABF426EB73F7007B09CA /* NewsResponse.swift in Sources */,

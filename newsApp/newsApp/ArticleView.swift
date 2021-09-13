@@ -13,7 +13,7 @@ struct ArticleView: View {
     let article: Article
     var body: some View {
         HStack{
-            if let imgUrl = article.image,
+            if let imgUrl = article.urlToImage,
                let url = URL(string: imgUrl) {
 
                 URLImage(url,
@@ -34,15 +34,12 @@ struct ArticleView: View {
         
             VStack(alignment: .leading, spacing: 4, content: {
                 Text(article.title ?? "")
+                    .frame(width: 250)
                     .foregroundColor(.black)
                     .font(.system(size: 18, weight: .semibold))
-                Text(article.source ?? "N/A")
-                    .foregroundColor(.black)
-                    .font(.footnote)
             })
                 
             }
-            
         }
         
     }

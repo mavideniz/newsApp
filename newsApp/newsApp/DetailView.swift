@@ -8,16 +8,20 @@
 import SwiftUI
 import URLImage
 
+
 struct DetailView: View {
+    
+    
+    @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     let article: Article
     
     var body: some View {
-        NavigationView{
-            
+        VStack{
+        ZStack{
+           
             VStack{
-                
-                if let imgUrl = article.image,
+                if let imgUrl = article.urlToImage,
                    let url = URL(string: imgUrl) {
 
                     URLImage(url,
@@ -33,58 +37,58 @@ struct DetailView: View {
                         .background(Color(.white))
                         .background(Color.gray)
                         .frame(width: 250, height: 250)
-                        
+
                 }
+                
                     Text(article.title ?? "")
                         .padding()
                         .font(.headline)
-                    
+
                     HStack{
                         Group{
                             Image(systemName: "newspaper.fill")
                             Text(article.author ?? "")
                                 .padding(-4)
                             Image(systemName: "calendar")
-                            Text(article.date ?? "")
+                            Text(article.publishedAt ?? "")
                                 .padding(-4)
                         }.font(.footnote)
                     }.padding(-10)
-                Text(article.articleDescription ?? "")
+                Text(article.description ?? "")
                     .padding()
-                Button(action: {
-                    print("test")
-                }
-                , label: {
-                    Text("News Source")
+                
+                Button(action: {}, label: {
+                    NavigationLink(destination: Webview(url: article.url ?? "")) {
+                         Text("News Source")
+                     }
                 })
                 .padding()
                 .foregroundColor(.black)
-                .padding(0)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(Color.black, lineWidth: 2)
                 )
-                Spacer()
             }
-            .navigationBarItems(trailing: HStack {
-                Button(action: shareButton) {
-                    Image(systemName: "square.and.arrow.up")
-                        .padding(2)
-                        .font(.title2)
-                }
-                Button(action: {
-                    print("fav test")
-                }) {
-                    Image(systemName: "star")
-                        .padding()
-                        .font(.title2)
-                }
-            })
-            }
+        }}
+        .navigationBarItems(trailing: HStack {
+        Button(action: shareButton) {
+            Image(systemName: "square.and.arrow.up")
+                .padding(2)
+                .font(.title2)
+        }
+        Button(action: {
+            print("fav test")
+        }) {
+            Image(systemName: "star")
+                .padding()
+                .font(.title2)
+        }
+    })
         }
     }
 func shareButton() {
-        let url = URL(string: "https://dogancan.dev")
+    
+    let url = URL(string: Article.dummyData.url ?? "")
         let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
 
         UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
