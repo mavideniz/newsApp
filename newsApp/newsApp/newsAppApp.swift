@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct newsAppApp: App {
+    
     var body: some Scene {
         WindowGroup {
             HomeView()

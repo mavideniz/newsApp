@@ -14,6 +14,8 @@ protocol NewsViewModel {
 
 class NewsViewModelImpl: ObservableObject, NewsViewModel{
     
+        var userSubject = "football"
+    
         private let service: NewsService
     
         var articles = [Article]()

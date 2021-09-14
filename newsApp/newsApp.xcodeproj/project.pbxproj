@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662BEE6026F0BA0600621E6C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BEE5F26F0BA0600621E6C /* FavoritesView.swift */; };
 		667AABE126EB7282007B09CA /* newsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AABE026EB7282007B09CA /* newsAppApp.swift */; };
 		667AABE526EB7283007B09CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667AABE426EB7283007B09CA /* Assets.xcassets */; };
 		667AABE826EB7283007B09CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667AABE726EB7283007B09CA /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		662BEE5F26F0BA0600621E6C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		667AABDD26EB7282007B09CA /* newsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667AABE026EB7282007B09CA /* newsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsAppApp.swift; sourceTree = "<group>"; };
 		667AABE426EB7283007B09CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				667AAC0B26EB865E007B09CA /* ErrorView.swift */,
 				66870D7226ECCA4E001FA333 /* DetailView.swift */,
 				66ADB17726EE0A9B0098C5D3 /* WebTab.swift */,
+				662BEE5F26F0BA0600621E6C /* FavoritesView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				66870D7326ECCA4E001FA333 /* DetailView.swift in Sources */,
 				66ADB17826EE0A9B0098C5D3 /* WebTab.swift in Sources */,
 				667AABF126EB72B3007B09CA /* HomeView.swift in Sources */,
+				662BEE6026F0BA0600621E6C /* FavoritesView.swift in Sources */,
 				667AABE126EB7282007B09CA /* newsAppApp.swift in Sources */,
 				667AABF426EB73F7007B09CA /* NewsResponse.swift in Sources */,
 				667AABFA26EB759E007B09CA /* APIError.swift in Sources */,

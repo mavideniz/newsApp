@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    
-   
 
+struct HomeView: View {
+
+    
     @StateObject var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
     
     @State private var searchTerm: String = ""
@@ -19,6 +19,7 @@ struct HomeView: View {
         NavigationView {
             TabView {
                 VStack{
+                    
                     SearchBar(text: $searchTerm)
                     List(viewModel.articles.filter({
                         "\($0)".contains(searchTerm) || searchTerm.isEmpty
@@ -32,22 +33,14 @@ struct HomeView: View {
                     Label("Menu", systemImage: "list.dash")
                     }
                 //Favorites need add
-                Text("fav")
+                FavoritesView()
                     .tabItem {
                         Label("Favorites", systemImage: "star")
                     }
-                
-//                // MARK: DEMO DETAİLS
-//                DetailView(article: Article.dummyData)
-//                    .tabItem {
-//                        Label("DetailsDemo", systemImage: "hourglass")
-//                    }
             }.onAppear(perform: viewModel.getArticles)
             .navigationTitle(Text("Appcent News App"))            
         }
 }
-
-    
     
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,6 +7,7 @@
 
 import Foundation
 
+var viewModel = NewsViewModelImpl(service: NewsServiceImpl())
 protocol APIBuilder {
     var urlRequest: URLRequest { get }
     var baseUrl: URL { get }
@@ -14,10 +15,13 @@ protocol APIBuilder {
 }
 
 enum NewsAPI {
+    
     case getNews
 }
 
 extension NewsAPI: APIBuilder {
+
+    
     var urlRequest: URLRequest {
         
         return URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
@@ -27,13 +31,12 @@ extension NewsAPI: APIBuilder {
     var baseUrl: URL {
         switch self {
         case .getNews:
-            return URL(string: "https://newsapi.org/v2/everything?q=besiktas&page=1&apiKey=90f78b5e459f4557a6d285161db89387")!
+            return URL(string: "https://newsapi.org/v2/everything?q=\(viewModel.userSubject)&page=1&apiKey=90f78b5e459f4557a6d285161db89387")!
         }
     }
     
     var path: String {
         return ""
     }
-    
     
 }

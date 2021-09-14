@@ -19,7 +19,6 @@ struct DetailView: View {
     var body: some View {
         VStack{
         ZStack{
-           
             VStack{
                 if let imgUrl = article.urlToImage,
                    let url = URL(string: imgUrl) {
@@ -84,7 +83,7 @@ struct DetailView: View {
                 .font(.title2)
         }
     })
-        }
+    }
     }
 func shareButton() {
     
@@ -93,8 +92,6 @@ func shareButton() {
 
         UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
 }
-
-
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(article: Article.dummyData)

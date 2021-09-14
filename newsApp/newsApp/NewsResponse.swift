@@ -15,7 +15,7 @@ struct NewsResponse: Codable {
 
 // MARK: - Article
 struct Article: Codable {
-
+    
     let author: String?
     let url: String?
     let title: String?
