@@ -15,7 +15,7 @@ A mobile application that presents the news received via NewsAPI to the user. Bu
 
 ## 📸 Screenshoots 
 
-![iexpense](https://i.ibb.co/Ld4t6TN/newsApp.gif)
+![newsApp](newsApp.gif)
 
 ## 🙋🏻‍♂️ Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
