@@ -13,6 +13,16 @@ struct ArticleView: View {
     let article: Article
     var body: some View {
         HStack{
+        
+            VStack(alignment: .leading, spacing: 4, content: {
+                Text(article.title ?? "")
+                    .frame(width: 250,height: 50)
+                    .foregroundColor(.black)
+                    .font(.system(size: 18, weight: .semibold))
+                Text(article.description ?? "")
+                    .frame(width: 250, height: 100)
+            })
+            
             if let imgUrl = article.urlToImage,
                let url = URL(string: imgUrl) {
 
@@ -31,15 +41,7 @@ struct ArticleView: View {
                     .frame(width: 100, height: 100)
                     
             }
-        
-            VStack(alignment: .leading, spacing: 4, content: {
-                Text(article.title ?? "")
-                    .frame(width: 250,height: 50)
-                    .foregroundColor(.black)
-                    .font(.system(size: 18, weight: .semibold))
-                Text(article.description ?? "")
-                    .frame(width: 250, height: 100)
-            })
+
                 
             }
         }
