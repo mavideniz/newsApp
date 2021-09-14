@@ -15,7 +15,8 @@ A mobile application that presents the news received via NewsAPI to the user. Bu
 
 ## 📸 Screenshoots 
 
-![newsApp](newsApp.gif)
+
+<img src="newsApp.gif" width="400"/>
 
 ## 🙋🏻‍♂️ Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
