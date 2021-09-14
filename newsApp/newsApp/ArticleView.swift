@@ -34,9 +34,11 @@ struct ArticleView: View {
         
             VStack(alignment: .leading, spacing: 4, content: {
                 Text(article.title ?? "")
-                    .frame(width: 250)
+                    .frame(width: 250,height: 50)
                     .foregroundColor(.black)
                     .font(.system(size: 18, weight: .semibold))
+                Text(article.description ?? "")
+                    .frame(width: 250, height: 100)
             })
                 
             }
