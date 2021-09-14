@@ -70,7 +70,7 @@ struct DetailView: View {
             }
         }}
         .navigationBarItems(trailing: HStack {
-        Button(action: shareButton) {
+            Button(action: shareButton) {
             Image(systemName: "square.and.arrow.up")
                 .padding(2)
                 .font(.title2)
